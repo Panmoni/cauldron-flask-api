@@ -6,6 +6,11 @@ from electrum_client import ElectrumClient
 app = Flask(__name__)
 
 
+@app.route('/')
+def home():
+    return 'Hello, World!'
+
+
 @app.route('/token_price', methods=['GET'])
 def token_price():
     category = request.args.get('category')
