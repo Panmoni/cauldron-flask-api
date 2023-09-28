@@ -25,3 +25,4 @@ class ElectrumClient:
             raise ValueError("Empty response from Electrum server")
 
         return json.loads(response)
+
