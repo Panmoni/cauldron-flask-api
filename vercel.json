@@ -1,3 +1,8 @@
 {
+  "functions": {
+    "api/index.py": {
+      "includeFiles": "electrum_client.py"
+    }
+  },
   "rewrites": [{ "source": "/(.*)", "destination": "/api/index.py" }]
 }
