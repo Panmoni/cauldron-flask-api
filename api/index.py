@@ -1,16 +1,15 @@
-# app.py
+# api/index.py
 
 from flask import Flask, jsonify, request
-from flask_cors import CORS
 from electrum_client import ElectrumClient
 
 app = Flask(__name__)
-#CORS(app)
-cors = CORS(app, resources={'/*': {'origins': ['http://localhost:3000', 'https://tokenstork.com', 'https://tokenstork-git-nextjs-apis-panmoni.vercel.app']}})
 
+# CORS(app)
+# cors = CORS(app, resources={'/*': {'origins': ['http://localhost:3000',
+#             'https://tokenstork.com', 'https://tokenstork-git-nextjs-apis-panmoni.vercel.app']}})
+# app.config['CORS_HEADERS'] = 'Content-Type'
 
-
-app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/')
 def home():
@@ -49,4 +48,3 @@ def token_liquidity():
         return jsonify({'error': 'Failed to fetch data from Electrum server'}), 500
 
     return jsonify(response)
-
