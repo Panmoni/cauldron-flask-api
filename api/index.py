@@ -1,10 +1,14 @@
-# app.py
+# index.py
 from flask import Flask, jsonify, request
 from .electrum_client import ElectrumClient
 app = Flask(__name__)
+
+
 @app.route('/')
 def home():
     return 'Hello, World!'
+
+
 @app.route('/token_price', methods=['GET'])
 def token_price():
     category = request.args.get('category')
@@ -19,6 +23,8 @@ def token_price():
         return jsonify(response)
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+
 @app.route('/token_liquidity', methods=['GET'])
 def token_liquidity():
     category = request.args.get('category')
@@ -31,4 +37,3 @@ def token_liquidity():
     return jsonify(response)
 # if __name__ == '__main__':
 #     app.run(debug=True)
-
