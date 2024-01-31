@@ -1,7 +1,14 @@
 # index.py
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 from .electrum_client import ElectrumClient
+
 app = Flask(__name__)
+
+cors = CORS(app, resources={'/*': {'origins': ['http://localhost:3000',
+            'https://tokenstork.com', 'https://tokenstork-git-002-panmoni.vercel.app']}})
+
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 
 @app.route('/')
