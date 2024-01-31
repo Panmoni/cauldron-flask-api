@@ -1,4 +1,4 @@
-linker==1.6.2
+linker==0.1.0
 click==8.1.7
 Flask==3.0.0
 importlib-metadata==6.8.0
