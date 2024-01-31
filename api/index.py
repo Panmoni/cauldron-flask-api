@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return 'Hello, World!'
+    return 'Hello, World! (vercel)'
 
 
 @app.route('/token_price', methods=['GET'])
