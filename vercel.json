@@ -5,6 +5,10 @@
             "src": "./api/index.py",
             "use": "@vercel/python"
         }
+        {
+            "src": "./api/electrum_client.py",
+            "use": "@vercel/python"
+        }
     ],
     "routes": [
         {
