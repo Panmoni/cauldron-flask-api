@@ -1,3 +1,3 @@
 # cauldron-flask-api
 
-An API for cauldron.swap's rostrum server
+An API for [Cauldron Swap](https://cauldron.quest/)'s rostrum server
