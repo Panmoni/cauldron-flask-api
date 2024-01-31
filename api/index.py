@@ -1,6 +1,6 @@
 # app.py
 from flask import Flask, jsonify, request
-from electrum_client import ElectrumClient
+from .electrum_client import ElectrumClient
 app = Flask(__name__)
 @app.route('/')
 def home():
