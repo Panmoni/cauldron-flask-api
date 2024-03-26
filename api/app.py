@@ -1,7 +1,7 @@
-# index.py
+# app.py
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-from .electrum_client import ElectrumClient
+from electrum_client import ElectrumClient
 
 app = Flask(__name__)
 
@@ -13,7 +13,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/')
 def home():
-    return 'Hello, World! (vercel)'
+    return 'Hello, World! (docker)'
 
 
 @app.route('/token_price', methods=['GET'])
@@ -42,5 +42,7 @@ def token_liquidity():
     if not response:
         return jsonify({'error': 'Failed to fetch data from Electrum server'}), 500
     return jsonify(response)
-# if __name__ == '__main__':
-#     app.run(debug=True)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
